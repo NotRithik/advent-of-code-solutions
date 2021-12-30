@@ -22,7 +22,7 @@ if ((process.argv).length > 2) {
   console.log('Input file not specified. Using Input_2.txt by default. Specify filename with --filename flag.');
 }
 
-let inputData = fs.readFileSync(inputFileName, 'utf8', (err, data) => {
+let inputData = fs.readFileSync(inputFileName, 'utf8', (err) => {
   if (err) {
     if (err.code === 'ENOENT') {
       console.log('Input file not found.');
@@ -43,7 +43,7 @@ nextWindow = inputDataArray[1] + inputDataArray[2] + inputDataArray[3];
 
 for (let i = 1; i < inputDataArray.length - 2; i++) {
   if (nextWindow > currentWindow)
-      increasesInDepth++;
+    increasesInDepth++;
 
   currentWindow = nextWindow;
 
